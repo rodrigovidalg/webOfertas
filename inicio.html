@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ofertas Super - Inicio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .carrusel-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      background-color: #e0e7ff;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .oferta-card {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .oferta-card h5 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+    .supermercado-nombre {
+       font-weight: 600;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.8rem;
+    }
+    .oferta-descripcion {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+    .btn-ver-oferta {
+      align-self: center;
+      margin-top: auto;
+      font-size: 1.1rem;
+      padding: 0.5rem 1.5rem;
+    }
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #0b5ed7;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flecha:hover {
+      background-color: rgba(79, 70, 229, 1);
+    }
+    .flecha-izquierda {
+      left: 10px;
+    }
+    .flecha-derecha {
+      right: 10px;
+    }
+    #carrusel-inner {
+  width: 82%;
+  background-color: white;
+  padding: 1rem;
+  transition: opacity 0.4s, transform 0.4s;
+  opacity: 1;
+  transform: translateX(0px);
+  margin: 0 auto;
+  border-radius: 10px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+.h5{
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+.label{
+    font-weight: 650;
+  color: #333;
+}
+.precio-oferta{
+    color: #27ae60;
+  font-weight: bold;
+  margin-right: 4px;
+}
+.precio-original{
+  text-decoration: line-through;
+  color: #e74c3c;
+  font-size: 0.95em;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Ofertas Super</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="ofertas.html">Todas las ofertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="carrito.html">Carrito</a></li>
+          <li class="nav-item">
+          <button id="btnCerrarSesion" class="btn btn-outline-light btn-sm ms-3">Cerrar sesión</button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="carrusel-container">
+    <button class="flecha flecha-izquierda" id="btn-izquierda"><i class="bi bi-arrow-left-circle"></i></button>
+    <div id="carrusel-inner">
+      <!-- Aquí se mostrará la oferta actual -->
+    </div>
+    <button class="flecha flecha-derecha" id="btn-derecha"><i class="bi bi-arrow-right-circle"></i></button>
+  </section>
+
+
+<section class="bg-primary text-white py-5 text-center">
+  <h3>¿Por qué elegirnos? </h3>
+  <p class="lead">Los mejores precios, variedad y comodidad en un solo lugar.</p>
+  <div class="d-flex justify-content-center gap-4 flex-wrap">
+    <div>
+      <i class="bi bi-tag-fill fs-1"></i>
+      <p>Ofertas exclusivas</p>
+    </div>
+    <div>
+      <i class="bi bi-shield-check fs-1"></i>
+      <p>Compra segura</p>
+    </div>
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="./js/inicio.js"></script>
+</body>
+</html>
